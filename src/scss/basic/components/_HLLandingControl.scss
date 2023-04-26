@@ -121,3 +121,14 @@ img[id*=_ProfileImage_] {
     max-height: 40px;
     max-width: 40px;
 }
+
+body.ribbit {
+    .community-home {
+        .row-wide>[class*=col-] {
+            >.row-wide {
+                margin: 0;
+            }
+        }
+    }
+    
+}

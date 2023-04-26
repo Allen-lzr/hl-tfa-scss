@@ -12,6 +12,17 @@
                     }
                 }
             }
+            ul {
+                li {
+                    .ByLine {
+                        a {
+                            &::after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
