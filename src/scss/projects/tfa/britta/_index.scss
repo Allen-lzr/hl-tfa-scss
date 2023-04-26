@@ -11,6 +11,7 @@ body.ribbit.interior :not(.no-theme) #InteriorPageTitle {
         color: $secondary-blue !important;
         font-size: $font-size-h1;
         font-weight: $font-weight-bold;
+        text-transform: uppercase;
     }
 }
 
