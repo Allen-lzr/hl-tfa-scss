@@ -43,6 +43,10 @@
     padding: 24px 32px;
     background-color: white;
     margin-bottom: 24px;
+    @include media(tablet-and-up) {
+        display: flex;
+        align-items: center;
+    }
     >.col-md-7 {
         padding-left: 0;
         @include media(tablet-to-desktop) {

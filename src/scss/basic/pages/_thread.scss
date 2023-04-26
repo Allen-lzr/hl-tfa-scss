@@ -1,0 +1,93 @@
+.viewthread {
+    div[id*="divMessageThread"] {
+        div[id*="threadNav"] {
+            border: 1px solid #eee;
+            border-radius: 12px;
+            >.col-md-12 {
+                padding: 0;
+                #DiscussionOutlineContainer {
+                    margin-bottom: 0;
+                    .list-group-item {
+                        border-bottom: 1px solid #eee;
+                        padding: 12px;
+                        .list-group-item-content {
+                            .list-group-item-image {
+                                img {
+                                    min-width: 40px;
+                                    min-height: 40px;
+                                    max-width: 40px;
+                                    max-height: 40px;
+                                }
+                            }
+                            .list-group-item-heading {
+                                color: #3C4453;
+                                font-size: 14px;
+                                letter-spacing: 0;
+                                .text-muted {
+                                    color: #808080;
+                                    font-family: "Source Sans Pro";
+                                    line-height: 16px;
+                                }
+                            }
+                            .list-group-item-text {
+                                margin-left: 50px;
+                                a {
+                                    font-family: "Source Sans Pro";
+                                    font-size: 12px;
+                                    font-weight: 600;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ul#DiscussionContentContainer {
+        >li {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            .pnl-row-item {
+                background-color: unset;
+                .messagetitle-container {
+                    padding: 0 16px;
+                    margin-bottom: 16px;
+                    h4 {
+                        color: #222A34;
+                        letter-spacing: 0;
+                        margin: 12px 0;
+                    }
+                }
+                >.row {
+                    margin-bottom: 24px;
+                    >.col-sm-10 {
+                        >.row:first-child {
+                            >.col-md-8 {
+                                padding: 0;
+                                .timeAgoFormat {
+                                    color: #808080;
+                                    font-family: "Proxima Nova";
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                        >.row:nth-child(2) {
+                            padding-top: 10px;
+                            font-family: "Source Sans Pro";
+                            .messageContentColumn {
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+                >br {
+                    display: none;
+                }
+            }
+            &:not(.depth0) {
+                margin-left: 0;
+            }
+        }
+    }
+}
