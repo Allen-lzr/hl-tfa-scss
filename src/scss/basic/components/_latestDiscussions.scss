@@ -7,8 +7,20 @@
                     text-align: center;
 
                     .btn-default {
-                        padding-left: 24px;
-                        padding-right: 24px;
+                        height: 36px;
+                        line-height: 36px;
+                        padding: 0 24px;
+                    }
+                }
+            }
+            ul {
+                li {
+                    .ByLine {
+                        a {
+                            &::after {
+                                display: none;
+                            }
+                        }
                     }
                 }
             }
