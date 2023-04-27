@@ -17,3 +17,76 @@ a[id*="CommunityList_join"] {
     padding: 8px 16px;
     border-radius: 20px;
 }
+
+.message-list-reply .btn-group.dropdown-multi-option {
+    .reply-inline {
+        background-color: $primary-blue;
+        border-top-left-radius: 22px;
+        border-bottom-left-radius: 22px;
+        color: $white;
+        font-weight: $font-weight-semibold;
+        border: 0 !important;
+        padding: $spacer * 0.375  $spacer * 0.125  $spacer * 0.375  $spacer * 0.75;
+    }
+    .dropdown-toggle {
+        background-color: $primary-blue;
+        border-top-right-radius: 22px;
+        border-bottom-right-radius: 22px;
+        color: $white;
+        border: 0 !important;
+        padding: $spacer * 0.375  $spacer * 0.5  $spacer * 0.375  $spacer * 0.125;
+    }
+}
+
+div[id*="ratingContainer"] {
+    a[id*="hypTotalLikes"] {
+        background: none;
+        border: 0;
+        color: $grap-heading;
+        border-right: 0;
+        border-radius: 0;
+        border-bottom-left-radius: 3px;
+        position: relative;
+        left: 5px;
+        padding: $spacer-1  $spacer * 0.375  $spacer-1 $spacer-3;
+        font-size: $body-font-size;
+        font-weight: $font-weight-semibold;
+        margin-right: 0;
+        &.btn-success {
+            color: $primary-blue;
+            border: 1px solid rgba(255,255,255,0);
+            background-color: $blue-lighter;
+            &:hover {
+                color: $primary-blue;
+                border: 1px solid rgba(255,255,255,0) !important;
+                background: $blue-lighter !important;
+            }
+        }
+    }
+    a[id*="lbUndoLike"],
+    a[id*="lbLike"] {
+        font: 0/0 a;
+        border: 0;
+        background: none;
+        border-right: 0;
+        border-radius: 0;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        padding: $spacer-1 $spacer-3 $spacer-1 $spacer * 0.375;
+        &::before {
+            content: "\f164";
+            color: $grap-heading;
+            font-family: "Font Awesome 6 Pro";
+            font-size: $spacer-4;
+            line-height: 21px;
+        }
+    }
+    a[id*="lbUndoLike"] {
+        border: 1px solid rgba(255,255,255,0);
+        background-color: $blue-lighter;
+        &::before {
+            color: $primary-blue;
+            font-weight: $font-weight-semibold;
+        }
+    }
+}
