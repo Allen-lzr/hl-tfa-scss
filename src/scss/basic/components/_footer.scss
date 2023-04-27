@@ -94,13 +94,17 @@
     display: inline-block;
     margin-top: $spacer-4;
     text-align: left;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: $spacer-4;
+    padding-right: $spacer-4;
+    @include media(desktop-and-down) {
+        padding-left: $spacer-2;
+        padding-right: $spacer-2;
+    }
 }
 
 #MPFooterLink {
     position: absolute;
-    bottom: 66px;
+    bottom: 64px;
     left: calc(50% - 330px);
     z-index: 2;
     @include media(tablet-and-down) {
@@ -121,11 +125,13 @@
         color: $secondary-blue;
         font-weight: $font-weight-semibold;
         line-height: 20px;
+        letter-spacing: 0;
     }
 
     #MPFooterLinkContent {
         @include media(tablet-and-down) {
-            padding-left: 16px;
+            padding-left: 8px;
+            padding-right: 8px;
             text-align: left;
         }
     }

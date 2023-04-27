@@ -8,6 +8,7 @@ body.ribbit.interior :not(.no-theme) #InteriorPageTitle {
     }
 
     #PageTitleH1 {
+        font-family: $font-family-advanced !important;
         color: $secondary-blue !important;
         font-size: $font-size-h1;
         font-weight: $font-weight-bold;
@@ -26,6 +27,9 @@ body.ribbit .community-home .ContentUserControl.community-tabs-container-outer {
         }
 
         li {
+            border-left: 4px;
+            border-right: 4px;
+            margin-bottom: 0;
 
             &:hover {
                 border-bottom: 4px solid $secondary-blue;
@@ -46,10 +50,15 @@ body.ribbit .community-home .ContentUserControl.community-tabs-container-outer {
         }
     }
 }
-
+body.ribbit .community-tabs-container #CommunityTabsContainer.nav.nav-tabs li {
+    border-left: 4px;
+    border-right: 4px;
+}
 body.ribbit :not(.no-theme) .community-tabs-container #CommunityTabsContainer.nav.nav-tabs li.active-tab,
 body.ribbit .community-tabs-container #CommunityTabsContainer.nav.nav-tabs li:hover,
 body.ribbit .community-tabs-container #CommunityTabsContainer.nav.nav-tabs li:focus {
+    border-left: 4px;
+    border-right: 4px;
     border-bottom: 4px solid $secondary-blue;
 }
 
@@ -66,6 +75,19 @@ body.community-pages .community-home .community-tabs-container .community-tabs-a
         border: 0;
         border-radius: 0;
         box-shadow: none;
+        .d-flex.justify-content-start {
+            @include media(desktop-and-down) {
+                display: block !important;
+            }
+        }
+        >div:nth-child(2) {
+            @include media(desktop-and-down) {
+                padding-left: 20px;
+            }
+            @include media(tablet-and-down) {
+                padding-left: 0;
+            }
+        }
     }
 
     .featured-card-single.card-layout-split {
@@ -107,6 +129,7 @@ body.community-pages .community-home .community-tabs-container .community-tabs-a
                         content: "";
                         font-family: "Font Awesome 5 Pro";
                         display: inline-block;
+                        color: $primary;
                         vertical-align: middle;
                         margin-left: $spacer-2;
                         font-size: $font-size-xlg;
@@ -122,7 +145,6 @@ body.community-pages .community-home .community-tabs-container .community-tabs-a
 /*********** most active members start *****************/
 .community-pages .community-home .ContentUserControl .HLLandingControl.HLEngagement {
     margin-top: $spacer-9;
-    max-width: 400px;
 
     .heading h2 {
         color: $gray-dark;
@@ -140,13 +162,21 @@ body.community-pages .community-home .community-tabs-container .community-tabs-a
        
         .title-row {
             display: flex;
+            .Picture {
+                width: 40px;
+            }
 
-            .col-md-9 a {
-                color: $gray-dark;
-                font-family: $font-family-base;
-                font-size: $font-size-base;
-                font-weight: $font-weight-semibold;
-                text-decoration: none;
+            .col-md-9 {
+                @media (min-width: 992px) {
+                    width: 100%;
+                }
+                 a {
+                    color: $gray-dark;
+                    font-family: $font-family-base;
+                    font-size: $font-size-base;
+                    font-weight: $font-weight-semibold;
+                    text-decoration: none;
+                }
             }
 
             .ByLine {
@@ -157,6 +187,10 @@ body.community-pages .community-home .community-tabs-container .community-tabs-a
         }
 
         .content-row {
+            .col-md-9 {
+                padding-left: 0;
+                padding-right: 0;
+            }
             .label-success {
                 border-radius: 3px;
                 background-color: $brand-primary;
