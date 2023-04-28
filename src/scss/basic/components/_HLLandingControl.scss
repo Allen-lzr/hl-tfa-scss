@@ -3,6 +3,8 @@
 .HLMyDocuments {
     .heading {
         h2 {
+            color: $gray-dark;
+            margin-bottom: $spacer-3;
             font-size: $font-size-xxlg;
             font-weight: $font-weight-semibold;
             line-height: 25px;
@@ -22,6 +24,7 @@
                         h3 {
                             line-height: 20px;
                         }
+
                         .LinkDocumentTitle {
                             color: $gray-dark;
                             font-size: $font-size-lg;
@@ -78,7 +81,7 @@
 
     .Content {
         >.row {
-            &:nth-last-of-type(1) {
+            &[id*=BottomLink] {
                 position: absolute;
                 top: -5px;
                 right: 0;
@@ -102,6 +105,7 @@
                     &:after {
                         content: "\f105";
                         font-family: "Font Awesome 5 Pro";
+                        color: $primary;
                         display: inline-block;
                         vertical-align: middle;
                         margin-left: $spacer-2;
@@ -109,6 +113,27 @@
                         font-weight: $font-weight-light;
                     }
                 }
+            }
+        }
+    }
+}
+
+.HLMyDocuments,
+.HLDiscussions {
+    .title-row {
+        .col-sm-2 {
+            @include media(tablet-and-down) {
+                float: left;
+            }
+        }
+
+        .col-sm-10.col-md-10 {
+            @include media(tablet-and-down) {
+                width: 83.33333333333334%;
+                float: left;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-top: 0;
             }
         }
     }
@@ -130,5 +155,5 @@ body.ribbit {
             }
         }
     }
-    
+
 }

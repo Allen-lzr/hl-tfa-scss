@@ -1,7 +1,41 @@
 .HLDiscussions {
     .Content {
         >.row {
-            &:nth-last-of-type(1) {
+            &[id*=UpLink] {
+                position: absolute;
+                top: -5px;
+                right: 0;
+
+                .col-md-12 {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+
+                .btn-default {
+                    width: 74px;
+                    height: 32px;
+                    color: #3C4453;
+                    font-size: $font-size-md;
+                    font-weight: $font-weight-semibold;
+                    letter-spacing: 0;
+                    line-height: 20px;
+                    border-radius: 3px;
+                    background-color: $secondary;
+
+                    &:after {
+                        content: "\f105";
+                        font-family: "Font Awesome 5 Pro";
+                        color: $primary;
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-left: $spacer-2;
+                        font-size: $font-size-xlg;
+                        font-weight: $font-weight-light;
+                    }
+                }
+            }
+
+            &[id*=BottomLink] {
                 .col-md-12 {
                     margin-top: $spacer-2;
                     text-align: center;
@@ -13,6 +47,7 @@
                     }
                 }
             }
+
             ul {
                 li {
                     .ByLine {

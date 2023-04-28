@@ -1,71 +1,22 @@
-/*********** Tab start *****************/
-
-body.ribbit.interior :not(.no-theme) #InteriorPageTitle {
-    background: $gray-dark;
-
-    svg {
-        display: none;
-    }
-
-    #PageTitleH1 {
-        color: $secondary-blue !important;
-        font-size: $font-size-h1;
-        font-weight: $font-weight-bold;
-        text-transform: uppercase;
-    }
-}
-
-body.ribbit .community-home .ContentUserControl.community-tabs-container-outer {
-    background: $gray-dark;
-    margin-top: -42px;
-
-    .community-tabs-container #CommunityTabsContainer.nav.nav-tabs {
-
-        .dropdown-menu {
-            background: $gray-dark;
-        }
-
-        li {
-
-            &:hover {
-                border-bottom: 4px solid $secondary-blue;
-            }
-
-            a {
-                font-size: $body-font-size;
-                font-weight: $font-weight-semibold;
-                color: $white;
-                font-family: $font-family-base;
-
-                .badge {
-                    border-radius: 4px;
-                    background-color: #FA383E;
-                    box-shadow: 0 3px 24px 0 rgba(131, 135, 145, 0.16);
-                }
-            }
-        }
-    }
-}
-
-body.ribbit :not(.no-theme) .community-tabs-container #CommunityTabsContainer.nav.nav-tabs li.active-tab,
-body.ribbit .community-tabs-container #CommunityTabsContainer.nav.nav-tabs li:hover,
-body.ribbit .community-tabs-container #CommunityTabsContainer.nav.nav-tabs li:focus {
-    border-bottom: 4px solid $secondary-blue;
-}
-
-body.community-pages .community-home .community-tabs-container .community-tabs-actions {
-    display: none;
-}
-
-/*********** Tab end *****************/
-
-
 /*********** feature cards start *****************/
 .community-pages .community-home .featured-card {
     .featured-card-single.card-layout-split {
         border: 0;
         border-radius: 0;
         box-shadow: none;
+        .d-flex.justify-content-start {
+            @include media(desktop-and-down) {
+                display: block !important;
+            }
+        }
+        >div:nth-child(2) {
+            @include media(desktop-and-down) {
+                padding-left: 20px;
+            }
+            @include media(tablet-and-down) {
+                padding-left: 0;
+            }
+        }
     }
 
     .featured-card-single.card-layout-split {
@@ -107,6 +58,7 @@ body.community-pages .community-home .community-tabs-container .community-tabs-a
                         content: "";
                         font-family: "Font Awesome 5 Pro";
                         display: inline-block;
+                        color: $primary;
                         vertical-align: middle;
                         margin-left: $spacer-2;
                         font-size: $font-size-xlg;
@@ -122,7 +74,6 @@ body.community-pages .community-home .community-tabs-container .community-tabs-a
 /*********** most active members start *****************/
 .community-pages .community-home .ContentUserControl .HLLandingControl.HLEngagement {
     margin-top: $spacer-9;
-    max-width: 400px;
 
     .heading h2 {
         color: $gray-dark;
@@ -140,13 +91,21 @@ body.community-pages .community-home .community-tabs-container .community-tabs-a
        
         .title-row {
             display: flex;
+            .Picture {
+                width: 40px;
+            }
 
-            .col-md-9 a {
-                color: $gray-dark;
-                font-family: $font-family-base;
-                font-size: $font-size-base;
-                font-weight: $font-weight-semibold;
-                text-decoration: none;
+            .col-md-9 {
+                @media (min-width: 992px) {
+                    width: 100%;
+                }
+                 a {
+                    color: $gray-dark;
+                    font-family: $font-family-base;
+                    font-size: $font-size-base;
+                    font-weight: $font-weight-semibold;
+                    text-decoration: none;
+                }
             }
 
             .ByLine {
@@ -157,6 +116,10 @@ body.community-pages .community-home .community-tabs-container .community-tabs-a
         }
 
         .content-row {
+            .col-md-9 {
+                padding-left: 0;
+                padding-right: 0;
+            }
             .label-success {
                 border-radius: 3px;
                 background-color: $brand-primary;

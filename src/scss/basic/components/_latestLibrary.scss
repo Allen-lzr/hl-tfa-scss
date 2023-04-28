@@ -1,4 +1,9 @@
 .HLMyDocuments {
+    .heading {
+        h2 {
+            margin-bottom: $spacer-8;
+        }
+    }
     .Content {
         >.row {
             ul {
@@ -15,5 +20,8 @@
 .community-home {
     .HLMyDocuments {
         margin-top: $spacer-10;
+        @include media(desktop-and-down) {
+            margin-top: 0;
+        }
     }
 }
