@@ -123,16 +123,19 @@ body.ribbit {
     }
   }
 }
+
 .contributed-content-list {
   a {
     text-decoration: none;
   }
+
   .contributed-content-item-description {
     a {
       color: $gray-dark;
       font-size: $font-size-base;
       font-weight: $font-weight-semibold;
       line-height: 20px;
+
       &:hover,
       &:focus,
       &:active {
@@ -141,3 +144,101 @@ body.ribbit {
     }
   }
 }
+
+/*********** Tab start *****************/
+
+body.ribbit.interior :not(.no-theme) #InteriorPageTitle {
+  background: $gray-dark;
+
+  svg {
+    display: none;
+  }
+
+  #PageTitleH1 {
+    font-family: $font-family-advanced !important;
+    color: $secondary-blue !important;
+    font-size: $font-size-h1;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+  }
+}
+
+body.ribbit .ContentUserControl.community-tabs-container-outer {
+  background: $gray-dark;
+  margin-top: -42px;
+
+  .community-tabs-container #CommunityTabsContainer.nav.nav-tabs {
+
+    .dropdown-menu {
+      background: $gray-dark;
+    }
+
+    li {
+      border-left: 4px;
+      border-right: 4px;
+      margin-bottom: 0;
+
+      &:hover {
+        border-bottom: 4px solid $secondary-blue;
+      }
+
+      a {
+        font-size: $body-font-size;
+        font-weight: $font-weight-semibold;
+        color: $white;
+        font-family: $font-family-base;
+
+        .badge {
+          border-radius: 4px;
+          background-color: #FA383E;
+          box-shadow: 0 3px 24px 0 rgba(131, 135, 145, 0.16);
+        }
+      }
+    }
+  }
+}
+
+body.ribbit .community-tabs-container #CommunityTabsContainer.nav.nav-tabs li {
+  border-left: 4px;
+  border-right: 4px;
+}
+
+body.ribbit :not(.no-theme) .community-tabs-container #CommunityTabsContainer.nav.nav-tabs li.active-tab,
+body.ribbit .community-tabs-container #CommunityTabsContainer.nav.nav-tabs li:hover,
+body.ribbit .community-tabs-container #CommunityTabsContainer.nav.nav-tabs li:focus {
+  border-left: 4px;
+  border-right: 4px;
+  border-bottom: 4px solid $secondary-blue;
+}
+
+body.community-pages .community-home .community-tabs-container .community-tabs-actions {
+  display: none;
+}
+
+button {
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:focus-visible {
+    outline: none;
+    outline-offset: 0;
+  }
+}
+
+body.ribbit {
+  .ProfileDropDown {
+    .img-button {
+
+      &:hover,
+      &:focus,
+      &:active,
+      &:focus-visible {
+        outline: none;
+        outline-offset: 0;
+      }
+    }
+  }
+}
+
+/*********** Tab end *****************/

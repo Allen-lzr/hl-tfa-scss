@@ -1,137 +1,328 @@
 body.ribbit #LogoNavPlaceholder img {
-	max-width: 128px;
-	height: auto !important;
+    max-width: 128px;
+    height: auto !important;
 }
-.row.traditional-nav#NAV {
-	#MPButtonBar {
-		padding-left: $spacer-2;
-		padding-right: $spacer-2;
-		.navbar {
-			padding: $spacer-1 * 3.75 $spacer-2;
-		}
-	}
-	.collapse >.row >.col-md-12 {
-		@media (max-width: $screen-sm-max) {
-			display: block !important;
-		}
-		#searchColumn {
-			@media (max-width: $screen-sm-max) {
-				position: relative;
-				width: 100%;
-			}
-			.input-group {
-				width: 100%;
-			}
-			#MPSearchBlock {
-				padding-top: 0;
-				@media (max-width: $screen-sm-max) {
-					width: 100%;
-				}
-				#SearchControl_SearchInputs .input-group .form-control:first-child#SearchControl_SearchTerm {
-					height: 34px;
-					@media (min-width: $screen-md-min) {
-						max-width: 80px;
-					}
-					@media (min-width: $screen-lg-min) {
-						max-width: 110px;
-					}
-					@media (min-width: $screen-xlg-min) {
-						max-width: 215px;
-						&:focus {
-							max-width: 215px;
-						}
-					}
-					@media (max-width: $screen-sm-max) {
-						max-width: 100%;
-					}
-				}
-			}
-			#RibbitWelcome {
-				.ProfileDropDown,
-				.Login {
-					margin-left: $spacer-5;
-					.btn {
-						border-radius: 22px;
-						font-weight: $font-weight-semibold;
-						line-height: 20px;
-					}
-				}
-			}
-			#CreateBtnWrapper {
-				margin-left: $spacer-5;
-				.btn {
-					border-radius: 22px;
-					font-weight: $font-weight-semibold;
-					line-height: 20px;
-					padding: $spacer-2 $spacer-1 * 2.5;
-				}
-			}
 
-		}
-		ul.navbar-nav {
-			@media (max-width: $screen-sm-max) {
-				width: 100%;
-				min-height: unset;
-			}
-			li {
-				a {
-					span {
-						//color: #222A34;
-						font-size: $font-size-md;
-						//font-weight: 600;
-						//letter-spacing: 0;
-						//line-height: 18px;
-						&::before {
-							font-family: "Font Awesome 5 Pro";
-							margin-right: $spacer-1;
-							font-size: $btn-font-size;
-						}
-					}
-					.caret {
-						display: none;
-					}
-				}
-				a[href="/home"] span {
-					&::before {
-						content: "\f015";
-						font-weight: $font-weight-normal;
-					}
-				}
-				a[href="/communities"] span {
-					&::before {
-						content: "\f0c0";
-						font-weight: $font-weight-normal;
-					}
-				}
-				a[href="/network"] span {
-					&::before {
-						content: "\f2b9";
-						font-weight: $font-weight-normal;
-					}
-				}
-				a[href="/events"] span {
-					&::before {
-						content: "\f133";
-						font-weight: $font-weight-normal;
-					}
-				}
-				a[href="/browse"] span {
-					&::before {
-						content: "\f14e";
-						font-weight: $font-weight-normal;
-					}
-				}
-			}
-		}
-	}
-	#searchColumn #MPSearchBlock {
-		@media (max-width: $screen-sm-max) {
-			border-top: 0;
-		}
-		#SearchControl_SearchInputs .input-group .form-control:first-child#SearchControl_SearchTerm {
-			@media (max-width: $screen-xs-max) {
-				padding-left: $spacer-7;
-			}
-		}
-	}
+.row.traditional-nav#NAV {
+    #SearchControl_newSearchBox {
+        #SearchControl_SearchButton {
+            &:hover,
+            &:focus,
+            &:active,
+            &:focus-visible {
+                outline: none;
+                outline-offset: 0;
+                box-shadow: none;
+            }
+        }
+    }
+    #MPButtonBar {
+        padding-left: $spacer-2;
+        padding-right: $spacer-2;
+
+        .navbar {
+            padding: $spacer-1 * 3.75 $spacer-2;
+        }
+
+    }
+
+    .navbar.navbar-default {
+        @media (max-width: $screen-lg) {
+            display: inline-block;
+        }
+        >.navbar-collapse {
+            @media (max-width: $screen-lg) {
+                width: 100%;
+            }
+            >.row {
+                >.col-md-12 {
+                    @media (max-width: $screen-lg) {
+                        padding: 0 5px !important;
+                    }
+                }
+            }
+        }
+
+        .navbar-nav {
+            @media (max-width: $screen-lg) {
+                display: block;
+                padding: 0 16px;
+                height: auto;
+                max-height: 340px;
+                margin: 7.5px -15px;
+            }
+            .dropdown-menu {
+                li {
+                    a {
+                        @media (max-width: $screen-lg) {
+                            padding-left: 30px;
+                        }
+                    }
+                }
+            }
+            .open {
+                .dropdown-menu {
+                    @media (max-width: $screen-lg) {
+                        position: static;
+                        float: none;
+                        width: auto;
+                        margin-top: 0;
+                        background-color: transparent;
+                        border: 0;
+                        box-shadow: none;
+                    }
+                }
+            }
+
+            &>li {
+                @media (max-width: $screen-lg) {
+                    float: none;
+                    margin-bottom: 16px;
+                }
+            }
+        }
+    }
+
+    .navbar-header {
+        @media (max-width: $screen-lg) {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            flex: 0 1;
+        }
+    }
+
+    #LogoNavPlaceholder {
+        @media (max-width: $screen-lg) {
+            display: flex;
+            flex: 1 0;
+            margin-left: 1em;
+        }
+    }
+
+    .navbar-collapse.collapse {
+        @media (min-width: $screen-sm) {
+            display: none !important;
+        }
+
+        @media (min-width: 1201px) {
+            display: block !important;
+        }
+    }
+
+    .navbar-header {
+        .navbar-toggle {
+            .icon-bar {
+                @media (max-width: $screen-lg) {
+                    background-color: $gray-base;
+                    width: 20px;
+                    transition: .3s ease-out;
+                }
+            }
+
+            @media (min-width: $screen-sm) {
+                display: block;
+            }
+
+            @media (min-width: 1201px) {
+                display: none;
+
+            }
+        }
+    }
+
+    #CreateBtnWrapper {
+        @media (max-width: $screen-lg) {
+            display: none;
+        }
+    }
+
+    #RibbitWelcome {
+        @media (max-width: $screen-lg) {
+            display: none;
+        }
+    }
+
+    #searchColumn {
+        @media (max-width: $screen-lg) {
+            margin-top: 8px;
+            width: 100%;
+            float: none !important;
+        }
+        #MPSearchBlock {
+            @media (max-width: $screen-lg) {
+                width: 100%;
+            }
+            .input-group {
+                @media (max-width: $screen-lg) {
+                    width: 100%;
+                } 
+            }
+        }
+    }
+
+    #RibbitWelcomeMobile {
+        @media (min-width: $screen-sm) {
+            display: block !important;
+        }
+
+        @media (min-width: 1201px) {
+            display: none !important;
+        }
+    }
+
+    .collapse>.row>.col-md-12 {
+        @media (max-width: $screen-sm-max) {
+            display: block !important;
+        }
+
+        #searchColumn {
+            @media (max-width: $screen-sm-max) {
+                position: relative;
+                width: 100%;
+            }
+
+            .input-group {
+                width: 100%;
+            }
+
+            #MPSearchBlock {
+                padding-top: 0;
+
+                @media (max-width: $screen-sm-max) {
+                    width: 100%;
+                }
+
+                #SearchControl_SearchInputs .input-group .form-control:first-child#SearchControl_SearchTerm {
+                    height: 34px;
+
+                    @media (min-width: $screen-md-min) {
+                        max-width: 80px;
+                    }
+
+                    @media (min-width: $screen-lg-min) {
+                        max-width: 110px;
+                    }
+
+                    @media (min-width: $screen-xlg-min) {
+                        max-width: 215px;
+
+                        &:focus {
+                            max-width: 215px;
+                        }
+                    }
+
+                    @media (max-width: $screen-sm-max) {
+                        max-width: 100%;
+                    }
+                }
+            }
+
+            #RibbitWelcome {
+
+                .ProfileDropDown,
+                .Login {
+                    margin-left: $spacer-5;
+
+                    .btn {
+                        border-radius: 22px;
+                        font-weight: $font-weight-semibold;
+                        line-height: 20px;
+                    }
+                }
+            }
+
+            #CreateBtnWrapper {
+                margin-left: $spacer-5;
+
+                @media (max-width: $screen-lg) {
+                    display: none;
+                }
+
+                .btn {
+                    border-radius: 22px;
+                    font-weight: $font-weight-semibold;
+                    line-height: 20px;
+                    padding: $spacer-2 $spacer-1 * 2.5;
+                }
+            }
+
+        }
+
+        ul.navbar-nav {
+            @media (max-width: $screen-sm-max) {
+                width: 100%;
+                min-height: unset;
+            }
+
+            li {
+                a {
+                    span {
+                        //color: #222A34;
+                        font-size: $font-size-md;
+
+                        //font-weight: 600;
+                        //letter-spacing: 0;
+                        //line-height: 18px;
+                        &::before {
+                            font-family: "Font Awesome 5 Pro";
+                            margin-right: $spacer-1;
+                            font-size: $btn-font-size;
+                        }
+                    }
+
+                    .caret {
+                        display: none;
+                    }
+                }
+
+                a[href="/home"] span {
+                    &::before {
+                        content: "\f015";
+                        font-weight: $font-weight-normal;
+                    }
+                }
+
+                a[href="/communities"] span {
+                    &::before {
+                        content: "\f0c0";
+                        font-weight: $font-weight-normal;
+                    }
+                }
+
+                a[href="/network"] span {
+                    &::before {
+                        content: "\f2b9";
+                        font-weight: $font-weight-normal;
+                    }
+                }
+
+                a[href="/events"] span {
+                    &::before {
+                        content: "\f133";
+                        font-weight: $font-weight-normal;
+                    }
+                }
+
+                a[href="/browse"] span {
+                    &::before {
+                        content: "\f14e";
+                        font-weight: $font-weight-normal;
+                    }
+                }
+            }
+        }
+    }
+
+    #searchColumn #MPSearchBlock {
+        @media (max-width: $screen-sm-max) {
+            border-top: 0;
+        }
+
+        #SearchControl_SearchInputs .input-group .form-control:first-child#SearchControl_SearchTerm {
+            @media (max-width: $screen-xs-max) {
+                padding-left: $spacer-7;
+            }
+        }
+    }
 }
