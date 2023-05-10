@@ -13,6 +13,26 @@ a[id*="CommunityList_join"] {
     border-radius: 20px;
 }
 
+div[id*="ucMessageList_rptMessageList"] {
+    &.CommentPanel {
+        @include media(tablet-and-down) {
+            margin-bottom: 0;
+        }
+
+    }
+
+    .reply-inline,
+    .dropdown-toggle {
+
+        &:hover,
+        &:active,
+        &:focus {
+            background: $btn-tertiary-bg-color-hover;
+            border-color: $btn-tertiary-border-color;
+        }
+    }
+}
+
 .bootstrap-4 .btn.btn {
     padding: 8px 16px;
     border-radius: 20px;
@@ -26,53 +46,104 @@ a[id*="CommunityList_join"] {
         color: $white;
         font-weight: $font-weight-semibold;
         border: 0 !important;
-        padding: $spacer * 0.375  $spacer * 0.125  $spacer * 0.375  $spacer * 0.75;
+        padding: $spacer * 0.375 $spacer * 0.125 $spacer * 0.375 $spacer * 0.75;
     }
+
     .dropdown-toggle {
         background-color: $primary-blue;
         border-top-right-radius: 22px;
         border-bottom-right-radius: 22px;
         color: $white;
         border: 0 !important;
-        padding: $spacer * 0.375  $spacer * 0.5  $spacer * 0.375  $spacer * 0.125;
+        padding: $spacer * 0.375 $spacer * 0.5 $spacer * 0.375 $spacer * 0.125;
     }
 }
 
 div[id*="ratingContainer"] {
     a[id*="hypTotalLikes"] {
+        position: relative;
+        top: -1.5px;
+        height: 40px;
+        line-height: 40px;
+        margin-right: -38px;
         background: none;
-        border: 0;
+        border: 1px solid transparent;
         color: $grap-heading;
         border-right: 0;
         border-radius: 0;
         border-bottom-left-radius: 3px;
         position: relative;
-        left: 5px;
-        padding: $spacer-1  $spacer * 0.375  $spacer-1 $spacer-3;
+        padding: $spacer-0 $spacer * 0.375 $spacer-0 $spacer-3;
         font-size: $body-font-size;
-        font-weight: $font-weight-semibold;
-        margin-right: 0;
+        font-weight: 500;
+
+        &[href="javascript:void(0)"] {
+            font: 0/0 a;
+            &::before {
+                content: "Like";
+                position: relative;
+                top: 19px;
+                left: 5px;
+                font-size: $font-size-md;
+                font-weight: 500;
+                color: $grap-heading;
+                font-family: $font-family-sans-serif;
+                
+            }
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            box-shadow: none;
+            outline: none;
+        }
+
         &.btn-success {
-            color: $primary-blue;
-            border: 1px solid rgba(255,255,255,0);
-            background-color: $blue-lighter;
-            &:hover {
+            color: $primary-blue !important;
+            border: 1px solid transparent;
+            background-color: transparent !important;
+            border-color: transparent !important;
+            border-radius: 22px;
+            box-shadow: none !important;
+            outline: none !important;
+            z-index: 3;
+
+            &:hover,
+            &:focus,
+            &:active {
                 color: $primary-blue;
-                border: 1px solid rgba(255,255,255,0) !important;
-                background: $blue-lighter !important;
+                border: 1px solid transparent !important;
+                background: transparent !important;
             }
         }
     }
+
     a[id*="lbUndoLike"],
     a[id*="lbLike"] {
+        width: 68px;
+        height: 40px;
+        border-radius: 22px;
+        text-align: right;
         font: 0/0 a;
         border: 0;
+        border-radius: 22px;
         background: none;
         border-right: 0;
         border-radius: 0;
         border-top-right-radius: 3px;
         border-bottom-right-radius: 3px;
-        padding: $spacer-1 $spacer-3 $spacer-1 $spacer * 0.375;
+        padding: $spacer-2 12px $spacer-0 $spacer * 0.375;
+        position: relative;
+        z-index: 2;
+
+        &:hover,
+        &:focus,
+        &:active {
+            box-shadow: none;
+            outline: none;
+        }
+
         &::before {
             content: "\f164";
             color: $grap-heading;
@@ -81,9 +152,18 @@ div[id*="ratingContainer"] {
             line-height: 21px;
         }
     }
+
     a[id*="lbUndoLike"] {
-        border: 1px solid rgba(255,255,255,0);
+        position: relative;
+        right: -4px;
+        border-radius: 22px;
+        border: 1px solid rgba(255, 255, 255, 0);
         background-color: $blue-lighter;
+
+        &.btn-recommend-yes {
+            padding: $spacer-2 $spacer-4 $spacer-0 $spacer * 0.375;
+        }
+
         &::before {
             color: $primary-blue;
             font-weight: $font-weight-semibold;

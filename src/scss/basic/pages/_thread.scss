@@ -1,6 +1,6 @@
 a[id*=backToDiscussions] {
     height: 40px;
-    line-height: 40px;
+    line-height: 36px;
     margin-bottom: $spacer-4;
     font-size: $font-size-lg;
     font-weight: $font-weight-semibold;
@@ -8,16 +8,23 @@ a[id*=backToDiscussions] {
     padding-bottom: 0;
     color: $white !important;
     border-radius: 22px;
-    background-color: $primary;
+    background: $primary;
+    border-color: $primary;
+
     i {
         font-size: $font-size-md;
+        position: relative;
+        top: 0
     }
+
     &:hover,
     &:focus,
     &:active {
         color: $btn-primary-color;
-        background-color: $btn-primary-bg-color-hover;
+        background: $btn-primary-bg-color-hover;
         border-color: $btn-primary-border-color;
+        outline: none;
+        outline-offset: 0;
     }
 }
 
@@ -32,6 +39,7 @@ a[id*=backToDiscussions] {
             }
         }
     }
+
     .thread-title {
         >.no-gutter {
             h2 {
@@ -40,9 +48,15 @@ a[id*=backToDiscussions] {
                 line-height: 38px;
             }
         }
+
+        >.col-md-2 {
+            margin-top: 0;
+        }
     }
+
     div[id*="divMessageThread"] {
         padding: 0;
+
         .expand-collapse-container {
             a {
                 font-family: Inter;
@@ -53,20 +67,26 @@ a[id*=backToDiscussions] {
                 margin-left: $spacer-4;
                 margin-right: $spacer-4;
             }
+
             .expand-collapse-pipe {
                 color: $gray-pipe;
             }
         }
+
         div[id*="threadNav"] {
             margin-left: $spacer-4 !important;
-            border: 1px solid rgba(222,222,222,0.5);
+            border: 1px solid rgba(222, 222, 222, 0.5);
             border-radius: 12px;
+
             >.col-md-12 {
                 padding: 0;
+
                 #DiscussionOutlineContainer {
                     margin-bottom: 0;
+
                     .list-group-item {
                         padding: $spacer-3;
+
                         .list-group-item-content {
                             .list-group-item-image {
                                 img {
@@ -76,11 +96,14 @@ a[id*=backToDiscussions] {
                                     max-height: 40px;
                                 }
                             }
+
                             .list-group-item-heading {
-                                color:$grap-heading;
+                                color: $grap-heading;
                                 font-weight: $font-weight-semibold;
                                 font-size: $body-font-size;
                                 letter-spacing: 0;
+                                text-transform: none;
+
                                 .daysago {
                                     color: $gray-text-muted;
                                     font-weight: $font-weight-normal;
@@ -89,8 +112,10 @@ a[id*=backToDiscussions] {
                                     text-transform: lowercase;
                                 }
                             }
+
                             .list-group-item-text {
                                 margin-left: 50px;
+
                                 a {
                                     font-family: $font-family-sans-serif;
                                     font-size: $font-size-sm;
@@ -100,6 +125,7 @@ a[id*=backToDiscussions] {
                             }
                         }
                     }
+
                     .list-group.in {
                         border-top: 1px solid $gray-lighter;
                     }
@@ -107,35 +133,69 @@ a[id*=backToDiscussions] {
             }
         }
     }
+
     ul#DiscussionContentContainer {
         >li {
-            border: 1px solid $gray-lighter;
+
+            @include media(tablet-and-down) {
+                position: relative;
+                padding-bottom: 50px;
+            }
+
+            .inline-reply-snippet {
+                @include media(tablet-and-down) {
+                    margin-bottom: $spacer-7;
+                }
+            }
+
+            border: 1px solid rgba(222, 222, 222, 0.75);
             border-radius: 8px;
+            box-shadow: 0 3px 24px 0 rgba(131, 135, 145, 0.08);
+
             .pnl-row-item {
                 background-color: unset;
+
                 .messagetitle-container {
                     display: flex;
                     align-items: center;
                     padding: 0 $spacer-4;
                     margin-bottom: $spacer-4;
-                    background-color: rgba(239,239,239,.8) !important;
+                    background-color: rgba(239, 239, 239, .8) !important;
+
                     div[id*="likeRatingContainer"] {
                         margin-top: 0 !important;
+                        display: inline-block;
+                        border-radius: 22px;
+                        // flex-flow: wrap;                
+                        // justify-content: center;
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            background-color: $blue-lighter;
+                        }
                     }
+
                     div[id*="MessageList_leftPaneCell"] {
                         @include media(tablet-and-down) {
                             width: 70%;
                         }
-                    }  
+                    }
+
                     .text-right {
                         @include media(tablet-and-down) {
-                            width: 30%;
+                            position: absolute;
+                            bottom: 27px;
+                            left: 104px;
+                            width: auto;
                         }
                     }
+
                     h4 {
                         color: $gray-dark;
                         letter-spacing: 0;
                         margin: $spacer-4 0;
+                        text-transform: none;
+
                         .messagetitle {
                             @include media(tablet-and-down) {
                                 display: inline;
@@ -143,11 +203,18 @@ a[id*=backToDiscussions] {
                         }
                     }
                 }
+
                 >.row {
                     margin-bottom: $spacer-7;
+
+                    @include media(tablet-and-down) {
+                        margin-bottom: $spacer-4;
+                    }
+
                     >.col-sm-2 {
                         .form-group {
                             margin-bottom: $spacer-2;
+
                             a[id*="ProfileImageDisplay"] {
                                 color: $gray-dark;
                                 font-family: $font-family-sans-serif;
@@ -156,41 +223,59 @@ a[id*=backToDiscussions] {
                             }
                         }
                     }
+
                     >.col-sm-10 {
                         padding-right: $spacer * 2.375;
+
                         @include media(tablet-and-down) {
+                            position: static;
                             padding-left: $spacer-4;
                         }
+
                         >.row:first-child {
                             >.col-md-8 {
                                 padding: 0;
+
                                 .timeAgoFormat {
                                     color: $gray-text-muted;
                                     font-weight: 500;
                                     font-size: $body-font-size;
                                 }
+
                                 @include media(desktop-and-down) {
                                     width: 66.66666666666666%;
                                     float: left;
                                 }
                             }
+
                             >.col-md-4 {
                                 @include media(desktop-and-down) {
                                     width: 33.33333333333333%;
                                     float: left;
                                     text-align: right;
-                                }  
+                                }
+
+                                @include media(tablet-and-down) {
+                                    position: absolute;
+                                    bottom: 32px;
+                                    left: 10px;
+                                    text-align: left;
+                                    width: auto;
+                                }
                             }
                         }
+
                         >.row:nth-child(2) {
                             padding-top: $spacer * 0.625;
                             font-family: $font-family-sans-serif;
+
                             .messageContentColumn {
                                 padding: 0;
-                                color: rgba(60,68,83,0.9);
+                                color: rgba(60, 68, 83, 0.9);
                                 font-size: $font-size-lg;
                                 line-height: 24px;
                             }
+
                             .message-original-button {
                                 a {
                                     border: 1px solid $gray-lighter;
@@ -199,36 +284,57 @@ a[id*=backToDiscussions] {
                                     color: $grap-heading;
                                     line-height: 24px;
                                     padding-right: $spacer-4;
+
                                     .glyphicon {
                                         color: $primary-blue;
                                     }
                                 }
                             }
+
                             .well {
-                                border: 1px solid $gray-lighter;
+                                border: 1px solid rgba(222, 222, 222, 0.5);
                                 border-radius: 4px;
-                                background-color: $gray-well-background;
+                                background-color: rgba(243, 243, 243, 0.24);
                                 color: $gray-text-muted;
+                                font-weight: 500;
                                 font-size: $body-font-size;
                                 line-height: 17px;
                                 padding: $spacer-4 $spacer-4 $spacer * 2.25;
                                 margin-bottom: 0px;
+                                font-family: "Proxima Nova";
+
+                                @include media(tablet-and-down) {
+                                    margin-bottom: $spacer-5;
+                                }
+
+                                >p {
+                                    >span {
+                                        font-family: $font-family-sans-serif;
+                                        font-size: $font-size-lg;
+                                        line-height: 24px;
+                                        color: rgba(60, 68, 83, 0.9);
+                                    }
+                                }
                             }
                         }
                     }
                 }
+
                 >br {
                     display: none;
                 }
             }
+
             &:not(.depth0) {
                 margin-left: 0;
             }
         }
     }
+
     .ContentItemMVC {
         padding-left: 15px;
         padding-right: 15px;
+
         .related-results-container {
             .TitleText {
                 font-size: $font-size-xxlg;
@@ -236,51 +342,65 @@ a[id*=backToDiscussions] {
                 line-height: 25px;
                 margin: 0 0 $spacer-3 0;
             }
+
             .related-results {
                 &.block {
                     flex-wrap: wrap;
                     gap: 20px;
                 }
+
                 >.row {
                     margin: 0;
                     flex: 1 1 20%;
                     max-width: calc(20% - 16px) !important;
+                    border: 1px solid rgba(222, 222, 222, 0.5);
+
                     @include media(large-and-down) {
                         flex: 1 1 33.333%;
                         max-width: calc(33.333% - 16px) !important;
                     }
+
                     @include media(tablet-and-down) {
                         flex: 1 1 100%;
                         max-width: 100% !important;
                     }
+
                     >.col-md-12 {
                         padding: $spacer-4 $spacer-5;
                         min-height: 207px;
+
                         @include media(large-and-down) {
                             min-height: 160px;
                         }
+
                         @include media(tablet-and-down) {
                             min-height: 130px;
                         }
+
                         h4 {
                             margin-top: 0;
                             margin-bottom: $spacer-3 !important;
+
                             a {
                                 color: $gray-dark;
                                 font-family: $font-family-sans-serif;
                                 font-size: $font-size-base;
                                 letter-spacing: 0;
                                 line-height: 20px;
+                                text-transform: none;
                             }
                         }
+
                         .owner-block {
                             img {
                                 width: 24px;
                                 max-width: unset;
                             }
                         }
+
                         .owner-name {
                             margin: $spacer-1 $spacer-3;
+
                             a {
                                 color: $grap-heading !important;
                                 font-family: $font-family-sans-serif;
@@ -290,18 +410,29 @@ a[id*=backToDiscussions] {
                                 text-decoration: none !important;
                             }
                         }
+
                         .meta-content-date {
                             color: $gray-text-muted;
                             font-family: $font-family-sans-serif;
                             line-height: 16px;
                             margin: $spacer-1 0 $spacer-2 0 !important;
                         }
+
                         .hl-type {
                             margin-bottom: 0 !important;
+
                             .label {
+                                font-family: $font-family-sans-serif;
                                 color: $grap-heading;
                                 font-size: $font-size-sm;
                                 line-height: 16px;
+                                background-color: rgba(239, 239, 239, 0.6);
+                                border: 0;
+
+                                .mt-count {
+                                    background-color: transparent;
+                                    font-weight: $font-weight-normal;
+                                }
                             }
                         }
                     }
@@ -309,13 +440,93 @@ a[id*=backToDiscussions] {
             }
         }
     }
+
     #iconFollow {
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 22px;
+        padding-left: 16px;
+        padding-right: 16px;
         font-family: Inter;
         color: $grap-heading;
         font-size: $body-font-size;
+
+        .text-muted {
+            color: $grap-heading;
+            font-weight: 500;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: rgba(0, 133, 200, 0.08);
+
+            .text-muted {
+                color: $primary-blue;
+            }
+        }
+
+
         i {
             color: $primary-blue;
             font-weight: $font-weight-normal;
+        }
+
+        ;
+
+        &[title="Following"] {
+            background-color: rgba(0, 133, 200, 0.08);
+
+            .text-muted {
+                color: $primary-blue;
+            }
+
+            i {
+                font-weight: $font-weight-bold;
+            }
+        }
+    }
+
+}
+
+div[id*="divMessageThread"] {
+    .col-sm8 {
+        >.input-group {
+            @include media(tablet-and-down) {
+                display: block;
+            }
+            .expand-collapse-container {
+                @include media(tablet-and-down) {
+                    display: block;
+                    margin-bottom: 16px;
+                }
+                .skip-header-text-color {
+                    @include media(tablet-and-down) {
+                        margin-right: 0;
+                    }
+                }
+            }
+            select {
+                padding-left: 12px;
+                padding-right: 25px;
+                appearance: none;
+                -moz-appearance: none;
+                -webkit-appearance: none;
+            }
+
+            &:after {
+                position: absolute;
+                right: 10px;
+                top: calc(50% - 7px);
+                font-family: "Font Awesome 5 Pro";
+                content: "\f107";
+                font-size: $font-size-sm;
+                font-weight: $font-weight-normal;
+                @include media(tablet-and-down) {
+                    top: calc(50% + 11px);
+                }
+            }
         }
     }
 }

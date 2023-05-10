@@ -1,40 +1,43 @@
 .HLDiscussions {
-    .Content {
-        >.row {
-            &[id*=UpLink] {
-                position: absolute;
-                top: -5px;
-                right: 0;
+    .heading {
+        .heading-more-button {
+            float: right;
+            position: relative;
+            top: -5px;
+            width: 74px;
+            height: 32px;
+            color: #3C4453;
+            font-size: $font-size-md;
+            font-weight: $font-weight-semibold;
+            letter-spacing: 0;
+            line-height: 20px;
+            border-radius: 3px;
+            background-color: $secondary;
+            border-color: $secondary;
 
-                .col-md-12 {
-                    padding-left: 10px;
-                    padding-right: 10px;
-                }
-
-                .btn-default {
-                    width: 74px;
-                    height: 32px;
-                    color: #3C4453;
-                    font-size: $font-size-md;
-                    font-weight: $font-weight-semibold;
-                    letter-spacing: 0;
-                    line-height: 20px;
-                    border-radius: 3px;
-                    background-color: $secondary;
-
-                    &:after {
-                        content: "\f105";
-                        font-family: "Font Awesome 5 Pro";
-                        color: $primary;
-                        display: inline-block;
-                        vertical-align: middle;
-                        margin-left: $spacer-2;
-                        font-size: $font-size-xlg;
-                        font-weight: $font-weight-light;
-                    }
-                }
+            &:hover,
+            &:active,
+            &:focus {
+                background: $btn-secondary-bg-color-hover;
+                border-color: $btn-secondary-border-color;
             }
 
+            &:after {
+                content: "\f105";
+                position: relative;
+                top: -2px;
+                font-family: "Font Awesome 5 Pro";
+                color: $primary;
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: $spacer-2;
+                font-size: $font-size-xlg;
+                font-weight: $font-weight-light;
+            }
+        }
+    }
+    .Content {
+        >.row {
             &[id*=BottomLink] {
                 .col-md-12 {
                     margin-top: $spacer-2;
@@ -44,6 +47,12 @@
                         height: 36px;
                         line-height: 36px;
                         padding: 0 24px;
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            background: $btn-primary-bg-color-hover;
+                            border-color: $btn-primary-border-color;
+                        }
                     }
                 }
             }

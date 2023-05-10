@@ -1,18 +1,27 @@
 /*********** feature cards start *****************/
 .community-pages .community-home .featured-card {
+    .featured-card-single {
+        .single-card-info {
+            padding-top: 0 !important;
+        }
+    }
+
     .featured-card-single.card-layout-split {
         border: 0;
         border-radius: 0;
         box-shadow: none;
+
         .d-flex.justify-content-start {
             @include media(desktop-and-down) {
                 display: block !important;
             }
         }
+
         >div:nth-child(2) {
             @include media(desktop-and-down) {
                 padding-left: 20px;
             }
+
             @include media(tablet-and-down) {
                 padding-left: 0;
             }
@@ -25,20 +34,23 @@
             background-size: 50%;
             background-repeat: no-repeat;
             border-radius: 32px;
-            background-color: rgba(239,239,239,0.24);
+            background-color: rgba(239, 239, 239, 0.24);
             border-radius: 32px;
-        } 
+        }
+
         .single-card-info {
+            margin-top: $spacer-2;
             padding-right: 0 !important;
             padding-left: 0 !important;
             min-height: 250px;
 
             .card-description {
-                color: rgba(60,68,83,0.9) !important;
+                color: rgba(60, 68, 83, 0.9) !important;
                 font-family: $font-family-base;
                 font-size: $font-size-base;
                 text-align: left;
             }
+
             .spaced-row.spaced-row-2 {
                 margin: 0;
 
@@ -53,6 +65,13 @@
                     color: #3C4453 !important;
                     font-size: $body-font-size;
                     font-weight: $font-weight-semibold;
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        background: $btn-secondary-bg-color-hover;
+                        border-color: $btn-secondary-border-color;
+                    }
 
                     &::after {
                         content: "";
@@ -69,11 +88,12 @@
         }
     }
 }
+
 /*********** feature cards end *****************/
 
 /*********** most active members start *****************/
-.community-pages .community-home .ContentUserControl .HLLandingControl.HLEngagement {
-    margin-top: $spacer-9;
+.HLEngagement {
+    margin-top: 20px;
 
     .heading h2 {
         color: $gray-dark;
@@ -88,18 +108,29 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-       
+
         .title-row {
             display: flex;
+
             .Picture {
                 width: 40px;
             }
 
             .col-md-9 {
+                justify-content: center;
+                flex-direction: column;
+                display: flex;
+
                 @media (min-width: 992px) {
                     width: 100%;
                 }
-                 a {
+
+                @include media(tablet-and-down) {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+
+                a {
                     color: $gray-dark;
                     font-family: $font-family-base;
                     font-size: $font-size-base;
@@ -120,6 +151,7 @@
                 padding-left: 0;
                 padding-right: 0;
             }
+
             .label-success {
                 border-radius: 3px;
                 background-color: $brand-primary;
@@ -139,4 +171,5 @@
         }
     }
 }
+
 /*********** most active members end *****************/

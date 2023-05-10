@@ -1,6 +1,29 @@
-body.ribbit #LogoNavPlaceholder img {
-    max-width: 128px;
-    height: auto !important;
+body.ribbit {
+    #LogoNavPlaceholder img {
+        max-width: 128px;
+        height: auto !important;
+    }
+    #MPOuterHeader {
+        .navbar,
+        .navbar-nav>li>a {
+            font-family: $font-family-sans-serif;
+            color: $gray-dark;
+        }
+    }
+    #MPButtonBar {
+        .dropdown-menu {
+            li {
+                a {
+                    color: $gray-dark;
+                }
+            }
+            .active {
+                >a {
+                    color: $gray-dark;
+                }
+            }
+        }
+    }
 }
 
 .row.traditional-nav#NAV {

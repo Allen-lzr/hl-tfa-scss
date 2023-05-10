@@ -148,7 +148,16 @@ body.ribbit {
 /*********** Tab start *****************/
 
 body.ribbit.interior :not(.no-theme) #InteriorPageTitle {
+  position: relative;
   background: $gray-dark;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #414F60 0%, rgba(34, 42, 52, 0) 100%);
+  }
 
   svg {
     display: none;
@@ -215,6 +224,28 @@ body.community-pages .community-home .community-tabs-container .community-tabs-a
   display: none;
 }
 
+#checkdv_1 {
+  display: none;
+}
+
+.btn.mobile-fab {
+  background: $primary !important;
+  opacity: 1;
+  &:hover,
+  &:focus,
+  &:active {
+    background: $btn-primary-bg-color-hover !important;
+  }
+}
+.btn.active-fab {
+  background: $primary !important;
+  &:hover,
+  &:focus,
+  &:active {
+    background: $btn-primary-bg-color-hover !important;
+  }
+}
+
 button {
 
   &:hover,
@@ -242,3 +273,18 @@ body.ribbit {
 }
 
 /*********** Tab end *****************/
+body.ribbit.interior {
+  #MainCopy_ContentWrapper {
+    &.community-home {
+      padding-bottom: 0;
+
+      .hl-lg-v-padding {
+        padding-bottom: $spacer-5;
+
+        @include media(tablet-and-down) {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+}
