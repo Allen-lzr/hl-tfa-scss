@@ -9,12 +9,27 @@
         div[id*="CommunityFilter"] {
             margin-bottom: 0;
 
-            select[id*="CommunityTypeDropDown"] {
-                background-image: url("../../../images/angle-down-light.svg");
-                background-repeat: no-repeat;
-                background-position: right;
-                background-size: 10px;
-                padding-left: 20px;
+            >.form-group {
+                position: relative;
+
+                select {
+                    padding-left: 12px;
+                    padding-right: 25px;
+                    appearance: none;
+                    -moz-appearance: none;
+                    -webkit-appearance: none;
+                }
+
+                &:after {
+                    position: absolute;
+                    right: 10px;
+                    top: calc(50% - 7px);
+                    font-family: "Font Awesome 5 Pro";
+                    content: "\f107";
+                    font-size: $font-size-sm;
+                    font-weight: $font-weight-normal;
+                }
+
             }
 
             .form-group {
@@ -57,11 +72,13 @@
 .community-list {
     display: flex;
     align-items: center;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(222, 222, 222, 0.75);
     border-radius: 8px;
     padding: 24px 32px;
     background-color: white;
     margin-bottom: 24px;
+    box-shadow: 0 3px 24px 0 rgba(131, 135, 145, 0.08);
+
     @include media(tablet-and-up) {
         display: flex;
         align-items: center;
@@ -224,7 +241,8 @@
             font-weight: $font-weight-normal;
             letter-spacing: 0.33px;
             line-height: 14px;
-            color: rgba(60,68,83,0.9);;
+            color: rgba(60, 68, 83, 0.9);
+            ;
             border: 0;
             text-transform: capitalize;
             background-color: unset;
@@ -239,10 +257,10 @@
 
             .badge {
                 font-size: 32px;
-                font-weight: $font-weight-semibold;
-                color: $blue-darker;
-                letter-spacing: 0.67px;
-                line-height: 27px;
+                font-family: $font-family-advanced;
+                font-weight: $font-weight-bold;
+                color: rgba(60, 68, 83, 0.9);
+                line-height: 38px;
                 background-color: transparent;
                 margin-bottom: 5px;
 
