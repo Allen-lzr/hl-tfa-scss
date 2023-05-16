@@ -501,7 +501,7 @@ div[id*="divMessageThread"] {
                     display: block;
                     margin-bottom: 16px;
                 }
-                .skip-header-text-color {
+                #collapse-all-posts {
                     @include media(tablet-and-down) {
                         margin-right: 0;
                     }
