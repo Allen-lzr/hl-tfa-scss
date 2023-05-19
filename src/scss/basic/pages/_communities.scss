@@ -1,10 +1,6 @@
 .mycommunities,
 .allcommunities {
     div[id*="UpdatePanel1"] {
-        .Count.text-muted {
-            color: #808080;
-            font-size: 14px;
-        }
 
         div[id*="CommunityFilter"] {
             margin-bottom: 0;
@@ -280,5 +276,12 @@
                 }
             }
         }
+    }
+}
+
+div[id*="UpdatePanel1"] {
+    .Count.text-muted {
+        color: #808080;
+        font-size: 14px;
     }
 }

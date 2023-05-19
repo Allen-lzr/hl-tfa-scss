@@ -164,12 +164,15 @@
 
             @media (min-width: 992px) {
                 .col-md-9 {
-                    width: unset;
+                    width: calc(100% - 50px);
                     padding-right: 0;
                 }
             }
         }
     }
+}
+body.ribbit #MainCopy_ContentWrapper>.row>div[class*=col-md-]>div[class*=Content] .HLLandingControl.HLEngagement {
+    border-top: none;
 }
 
 /*********** most active members end *****************/
