@@ -288,3 +288,35 @@ body.ribbit.interior {
     }
   }
 }
+body.ribbit.home {
+  .home {
+    .row.row.hl-lg-v-padding {
+      padding-top: 0;
+    }
+  }
+}
+
+body.ribbit #MainCopy_ContentWrapper>.row>div[class*=col-md-]>div[class*=Content] .HLLandingControl.HLEngagement {
+  border-top: 0;
+}
+
+/*********** Pagination *****************/
+.bootstrap-4 div.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  margin-left: $spacer-4;
+  position: relative;
+  bottom: $spacer-1;
+}
+
+/*********** Icons *****************/
+.contributed-content-list .item-icon {
+  display: none;
+}
+
+/*********** Dropdowns *****************/
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+  margin-bottom: $spacer-2;
+}
+div[id*="ContributedContentList"] .text-muted >span.padding-md-left {
+  position: relative;
+  bottom: $spacer-1;
+}
