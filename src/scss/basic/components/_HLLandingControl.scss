@@ -71,11 +71,15 @@
             }
         }
     }
-    div[id*="DiscussionList_discussionRatings"] {
-        div[id*="DiscussionList_ratingStats"] {
+}
+
+.HLLandingControl {
+    .ItemRatingCommentPanel {
+        span[id*="lblTotalLikes"] {
             color: $gray-text-muted;
             font-size: 12px;
             line-height: 16px;
+
             a {
                 color: $gray-text-muted !important;
                 text-decoration: none;
@@ -176,4 +180,15 @@ body.ribbit {
         }
     }
 
+}
+
+body.ribbit.interior {
+    #MainCopy_ContentWrapper>.row>div[class*=col-md-]>div[class*=Content] {
+        .HLLandingControl {
+            .row {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
 }
